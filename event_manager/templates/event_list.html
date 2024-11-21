@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Event List{% endblock %}
+
+{% block content %}
+<h1>Upcoming Events</h1>
+<div class="event-list">
+    {% for event in events %}
+        <div class="event">
+            <img src="{{ event.image.url }}" alt="{{ event.title }}" 
+                 {% if event.is_full %}style="filter: grayscale(100%);" {% endif %}>
+            <h2>{{ event.title }}</h2>
+            <p>{{ event.date }}</p>
+            <p>Available slots: {{ event.slots_available }}</p>
+            {% if not event.is_full %}
+                <a href="{% url 'event_detail' event.id %}">View Details</a>
+            {% else %}
+                <p>This event is full</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
