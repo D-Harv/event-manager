@@ -10,8 +10,8 @@
             <img src="{{ event.image.url }}" alt="{{ event.title }}" 
                  {% if event.is_full %}style="filter: grayscale(100%);" {% endif %}>
             <h2>{{ event.title }}</h2>
-            <p>{{ event.date }}</p>
-            <p>Available slots: {{ event.slots_available }}</p>
+            <p><strong>Date:</strong> {{ event.date }}</p>
+            <p><strong>Available Slots:</strong> {{ event.slots_available }}</p>
             {% if not event.is_full %}
                 <a href="{% url 'event_detail' event.id %}">View Details</a>
             {% else %}

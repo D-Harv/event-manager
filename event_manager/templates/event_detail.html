@@ -4,17 +4,31 @@
 
 {% block content %}
 <h1>{{ event.title }}</h1>
-<img src="{{ event.image.url }}" alt="{{ event.title }}">
 <p>{{ event.description }}</p>
 <p>Date: {{ event.date }}</p>
-<p>Available slots: {{ event.slots_available }}</p>
-{% if not event.is_full %}
-    <form method="post" action="{% url 'rsvp' event.id %}">
-        {% csrf_token %}
-        <button type="submit">RSVP</button>
-    </form>
-{% else %}
-    <p>This event is full. You cannot RSVP.</p>
+
+<h2>Available Slots by Profession</h2>
+<ul>
+    <li>Inspectors: {{ event.inspector_slots }}</li>
+    <li>Photographers: {{ event.photographer_slots }}</li>
+    <li>Contractors: {{ event.contractor_slots }}</li>
+    <li>Real Estate Agents: {{ event.real_estate_slots }}</li>
+</ul>
+
+<h2>RSVP</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit RSVP</button>
+</form>
+
+{% if form.errors %}
+    <div class="errors">
+        <ul>
+            {% for error in form.non_field_errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endif %}
-<a href="/events/">Back to Events</a>
 {% endblock %}

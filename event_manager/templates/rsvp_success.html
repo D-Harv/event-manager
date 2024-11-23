@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block title %}RSVP Success{% endblock %}
+
+{% block content %}
+<h1>Thank you for RSVPing!</h1>
+<p>You have successfully reserved a slot for {{ event.title }}.</p>
+<a href="/events/">Back to Events</a>
+{% endblock %}
