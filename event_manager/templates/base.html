@@ -1,17 +1,23 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Event Manager{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Event Manager</h1>
-        <nav>
+    <header class="banner">
+        <div class="logo-container">
+            <img src="{% static 'photos/company_logo.png' %}" alt="Company Logo" class="company-logo">
+        </div>
+        <div class="menu-button" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="menu hidden" id="menu">
             <a href="/events/">Home</a>
             <a href="/mailing-list/subscribe/">Subscribe</a>
             <a href="/mailing-list/unsubscribe/">Unsubscribe</a>
@@ -23,5 +29,11 @@
     <footer>
         <p>&copy; {{ current_year }} Event Manager. All rights reserved.</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </body>
 </html>

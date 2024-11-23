@@ -22,7 +22,7 @@ def event_detail(request, event_id):
             profession = attendee.profession
             current_slots = getattr(event, f"{profession}_slots")
             setattr(event, f"{profession}_slots", current_slots - 1)
-            event.sagit ve()
+            event.save()
 
             attendee.save()
             return render(request, 'rsvp_success.html', {'event': event})

@@ -156,3 +156,87 @@ button:hover {
     color: #0055a5;
     text-decoration: underline;
 }
+
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Banner */
+.banner {
+    background-color: #272f53;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: white;
+    position: relative;
+}
+
+/* Logo */
+.logo-container {
+    flex: 1;
+}
+
+.company-logo {
+    height: 50px;
+    width: auto;
+}
+
+/* Menu Button */
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.bar {
+    height: 4px;
+    background-color: crimson;
+    width: 100%;
+    border-radius: 2px;
+}
+
+/* Dropdown Menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: #272f53;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    z-index: 10;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.menu a:hover {
+    background-color: crimson;
+}
+
+/* Hide Menu by Default */
+.hidden {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu {
+        width: 100%;
+    }
+}
