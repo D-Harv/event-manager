@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="homepage">
+    <!-- Photo Collage Section -->
+    <div class="collage">
+        <div class="collage-item">
+            <img src="{% static 'photos/photo1.jpg' %}" alt="Photo 1">
+        </div>
+        <div class="collage-item">
+            <img src="{% static 'photos/photo2.jpg' %}" alt="Photo 2">
+        </div>
+        <div class="collage-item">
+            <img src="{% static 'photos/photo3.jpg' %}" alt="Photo 3">
+        </div>
+        <div class="collage-text">
+            <div class="overlay-text">
+                <h1>Welcome to Our Company</h1>
+                <p>Your trusted partner in real estate, contracting, and more.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overview Section -->
+    <section class="overview">
+        <h2>About Us</h2>
+        <p>
+            Our company has been a leader in providing top-notch services for contractors, 
+            real estate agents, inspectors, and photographers. With years of experience, 
+            we aim to bring excellence to every project we undertake.
+        </p>
+    </section>
+
+    <!-- Contact Cards Section -->
+    <section class="contact-cards">
+        <div class="card">
+            <img src="{% static 'photos/portrait1.jpg' %}" alt="Portrait 1">
+            <a href="/contact/">Contact John</a>
+        </div>
+        <div class="card">
+            <img src="{% static 'photos/portrait2.jpg' %}" alt="Portrait 2">
+            <a href="/contact/">Contact Jane</a>
+        </div>
+    </section>
+</div>
+{% endblock %}

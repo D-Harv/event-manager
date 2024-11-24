@@ -56,3 +56,10 @@ def rsvp(request, event_id):
         form = RSVPForm(event=event)
 
     return render(request, 'event_rsvp.html', {'event': event, 'form': form})
+
+
+def homepage(request):
+    """
+    Renders the homepage with a photo collage, overview, and contact cards.
+    """
+    return render(request, 'homepage.html')
