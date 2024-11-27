@@ -6,7 +6,14 @@ body {
     color: #333;
 }
 
-header, footer {
+header {
+    background-color: #003366;
+    color: white;
+    text-align: left;
+    padding: 15px 0;
+}
+
+footer {
     background-color: #003366;
     color: white;
     text-align: center;
@@ -165,28 +172,32 @@ body {
 }
 
 /* Banner */
+/* Banner */
 .banner {
-    background-color: #272f53;
+    display: flex;
+    justify-content: flex-start; /* Align elements to the left */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #003366; /* Ensure header color consistency */
+    color: white;
+}
+
+/* Logo Container */
+.logo-container {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    color: white;
-    position: relative;
 }
 
-/* Logo */
-.logo-container {
-    flex: 1;
-}
-
+/* Company Logo */
 .company-logo {
-    height: 50px;
+    max-height: 50px; /* Adjust logo size as needed */
     width: auto;
+    margin-right: 20px; /* Add space between the logo and other elements */
 }
 
 /* Menu Button */
 .menu-button {
+    margin-left: auto; /* Push the menu button to the right */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
