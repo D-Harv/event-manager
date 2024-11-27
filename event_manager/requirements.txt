@@ -1,6 +1,0 @@
-Django>=4.2,<5.0           # The core Django framework
-pillow>=9.0.0              # For handling image uploads
-django-widget-tweaks>=1.4.12  # Optional: for customizing form templates
-psycopg2-binary         # For PostgreSQL database support (if using PostgreSQL)
-gunicorn>=20.1.0           # For deployment on a production server
-django-storages[boto3]>=1.13.2  # Optional: for managing static/media files on AWS S3
