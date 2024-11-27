@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Event Manager{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header class="banner">
+        <div class="logo-container">
+            <img src="{% static 'photos/companylogo.jpg' %}" alt="Company Logo" class="company-logo">
+        </div>
+        <div class="menu-button" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <nav class="menu hidden" id="menu">
+            <a href="/events/">Home</a>
+            <a href="/mailing-list/subscribe/">Subscribe</a>
+            <a href="/mailing-list/unsubscribe/">Unsubscribe</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; {{ current_year }} Event Manager. All rights reserved.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
